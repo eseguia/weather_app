@@ -2,13 +2,6 @@ import requests
 import tkinter as tk
 from PIL import Image, ImageTk
 
-# url = 'https://www.meteored.com.ar/tiempo-en_Buenos+Aires-America+Sur-Argentina-Ciudad+Autonoma+de+Buenos+Aires-SABE-1-13584.html'
-# source = requests.get(url)
-# soup = BeautifulSoup(source.text, 'html.parser')
-# # print(soup.prettify())
-# weath = soup.find(class_='dato-temperatura changeUnitT').text
-# print(weath)
-
 def results(weather):
     name,description = weather['name'],weather['weather'][0]['description']
     temp,feels = weather['main']['temp'],weather['main']['feels_like']
@@ -28,12 +21,12 @@ def give_weather(city):
 
 root = tk.Tk()
 root.title('Weather')
-root.iconbitmap('C:/Users/Emilio/Documents/JUPYTER NOTEBOOKS/weather_icon.ico')
+root.iconbitmap('weather_icon.ico')
 HEIGHT, WIDTH = 700,800
 canvas = tk.Canvas(root,height=HEIGHT,width=WIDTH)
 canvas.pack()
 
-back_img = tk.PhotoImage(file='C:/Users/Emilio/Documents/JUPYTER NOTEBOOKS/sky_background_weather.png')
+back_img = tk.PhotoImage(file='sky_background_weather.png')
 back_img= back_img.subsample(2, 2)
 background = tk.Label(root, image = back_img)
 background.place(relwidth=1,relheight=1)
