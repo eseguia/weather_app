@@ -1,7 +1,7 @@
 import requests
 import tkinter as tk
 from PIL import Image, ImageTk
-
+#comentario
 def results(weather):
     name,description = weather['name'],weather['weather'][0]['description']
     temp,feels = weather['main']['temp'],weather['main']['feels_like']
